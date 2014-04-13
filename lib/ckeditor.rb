@@ -201,7 +201,7 @@ module Ckeditor
   end
 
   def self.editor_version
-    browser = Browser.new
+    browser = Browser.new ua: request.env['HTTP_USER_AGENT']
 
     if browser.ie7?
       'legacy'
