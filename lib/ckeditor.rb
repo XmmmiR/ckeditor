@@ -201,7 +201,7 @@ module Ckeditor
   end
 
   def self.editor_version
-    browser = Browser.new ua: Rack::Request.user_agent
+    browser = Browser.new ua: env['HTTP_USER_AGENT']
 
     if browser.ie7?
       'legacy'
