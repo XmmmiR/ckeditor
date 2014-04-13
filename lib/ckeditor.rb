@@ -204,9 +204,9 @@ module Ckeditor
     browser = Browser.new
 
     if browser.ie7?
-      Ckeditor::Version::EDITOR_IE7
+      'legacy'
     else
-      Ckeditor::Version::EDITOR
+      'current'
     end
   end
 end
