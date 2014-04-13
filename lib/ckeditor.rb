@@ -1,5 +1,6 @@
 require 'orm_adapter'
 require 'pathname'
+require 'browser'
 
 module Ckeditor
   autoload :Utils, 'ckeditor/utils'
@@ -197,6 +198,16 @@ module Ckeditor
   def self.current_user_method(&block)
     @current_user = block if block
     @current_user || DEFAULT_CURRENT_USER
+  end
+
+  def self.editor_version
+    browser = Browser.new
+
+    if browser.ie7?
+      Ckeditor::Version::EDITOR_IE7
+    else
+      Ckeditor::Version::EDITOR
+    end
   end
 end
 

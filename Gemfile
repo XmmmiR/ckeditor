@@ -13,6 +13,7 @@ end
 
 platforms :ruby do
   gem "sqlite3"
+  gem 'browser'
 
   group :development do
     gem "unicorn", "~> 4.0.1"
